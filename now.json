@@ -1,11 +1,5 @@
 {
     "version": 2,
     "name": "southseattlefitness",
-    "alias": "southseattlefitness.com",
-    "builds": [
-        {
-            "src": "/public",
-            "use": "@now/static"
-        }
-    ]
+    "alias": "southseattlefitness.com"
 }

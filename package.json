@@ -25,8 +25,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deploy": "now && now alias",
-    "now-build": "npm run build",
+    "deploy": "npx now ./public -A ../now.json && now alias",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
@@ -35,7 +34,6 @@
   },
   "devDependencies": {
     "core-js": "^2.6.2",
-    "now": "^13.0.4",
     "nwb": "^0.23.0",
     "prettier": "^1.15.2"
   },
