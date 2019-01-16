@@ -40,6 +40,10 @@ const styles = theme => ({
         '&:hover': {
             backgroundColor: 'rgba(63, 207, 213, 0.2)'
         }
+    },
+    image: {
+        width: '100%',
+        height: '100%'
     }
 });
 
@@ -51,10 +55,7 @@ export default withStyles(styles)(({ classes }) => (
                 <Grid item xs={12} md={4}>
                     <Paper className={classes.paper}>
                         <a href="https://southseattle.fit4mom.com/" className={classes.link}>
-                            <Fit4MomImage style={{
-                                width: '100%',
-                                height: '100%'
-                            }} />
+                            <Fit4MomImage className={classes.image} />
                             <div className={classes.text}>
                                 FIT4MOM Classes
                             </div>
@@ -64,10 +65,7 @@ export default withStyles(styles)(({ classes }) => (
                 <Grid item xs={12} md={4}>
                     <Paper className={classes.paper}>
                         <a href="https://squareup.com/appointments/book/16c2c6c3-69bb-467d-9220-a0ffbdf0cd91/5Q4RPH7WJTFEC/date" className={classes.link}>
-                            <YogaImage style={{
-                                width: '100%',
-                                height: '100%'
-                            }} />
+                            <YogaImage className={classes.image} />
                             <div className={classes.text}>
                                 Yoga Schedule
                             </div>
@@ -77,10 +75,7 @@ export default withStyles(styles)(({ classes }) => (
                 <Grid item xs={12} md={4}>
                     <Paper className={classes.paper}>
                         <a href="https://squareup.com/appointments/book/16c2c6c3-69bb-467d-9220-a0ffbdf0cd91/5Q4RPH7WJTFEC/staff" className={classes.link}>
-                            <EventsImage style={{
-                                width: '100%',
-                                height: '100%'
-                            }} />
+                            <EventsImage className={classes.image} />
                             <div className={classes.text}>
                                 Event Rentals
                             </div>

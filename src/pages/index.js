@@ -12,13 +12,16 @@ import { ThemeProvider } from "@material-ui/styles";
 
 const theme = createMuiTheme();
 
+const transparent = color => `${color}99`;
+
 const COLORS = {
   WHITE: '#fff',
-  GOLD: '#ffca17ad',
-  TEAL: '#3fcfd5ad',
+  GOLD: '#ffca17',
+  TEAL: '#3fcfd5',
   GREY: '#a1a3a5',
-  DARK_GREY: 'rgb(97, 99, 101)',
-  BROWN: '#351500aa'
+  DARK_GREY: '#616365',
+  BROWN: '#28100099',
+  BLACK: '#333'
 }
 
 const Button = ({ children, style, ...props }) => (
@@ -42,9 +45,9 @@ const TealButton = withStyles(
   theme => ({
     button: {
       color: COLORS.WHITE,
-      backgroundColor: '#3fcfd5ad',
+      backgroundColor: transparent(COLORS.TEAL),
       '&:hover': {
-        backgroundColor: '#3fcfd5'
+        backgroundColor: COLORS.TEAL
       }
     }
   })
@@ -54,20 +57,17 @@ const TealButton = withStyles(
   </Button>
 ));
 
-const TexturedSection = ({ children, style }) => (
+const TexturedSection = props => (
   <div style={{
-    backgroundColor: COLORS.BROWN,
+    backgroundColor: COLORS.TEAL,
     backgroundImage: `url(${pattern})`,
     backgroundPosition: '50% 0',
     backgroundAttachment: 'scroll',
     backgroundSize: 'auto',
     backgroundRepeat: 'repeat',
     borderTop: `2px solid ${COLORS.GREY}`,
-    borderBottom: `2px solid ${COLORS.GREY}`,
-    ...style
-  }}>
-    {children}
-  </div>
+    borderBottom: `2px solid ${COLORS.GREY}`
+  }} {...props} />
 );
 
 const Boxes = ({ children }) => (
@@ -129,9 +129,38 @@ const usePaperForm = () => {
   }, []);
 };
 
-const linkStyle = { textDecoration: 'none', color: COLORS.WHITE };
 
-const IndexPage = () => {
+const IndexPage = withStyles(theme => ({
+  link: {
+    textDecoration: 'none',
+    color: COLORS.DARK_GREY,
+    '&:hover': {
+      color: COLORS.BLACK
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '1em',
+      display: 'block'
+    }
+  },
+  name: {
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: '1em'
+    }
+  },
+  middle: {
+    height: 100
+  },
+  footer: {
+    margin: '0em auto',
+    padding: '2em 5em',
+    fontWeight: 'bold',
+    color: COLORS.DARK_GREY,
+    [theme.breakpoints.down('xs')]: {
+      padding: '2em'
+    }
+  }
+}))(({ classes }) => {
+  console.log({ classes })
   usePaperForm();
   return (
     <ThemeProvider theme={theme}>
@@ -157,25 +186,19 @@ const IndexPage = () => {
             View Studio Calendar
         </TealButton>
         </div>
-        <TexturedSection style={{ height: 100 }} />
+        <TexturedSection className={classes.middle} />
         <Programs />
-        <TexturedSection style={{
-          margin: `0em auto`,
-          padding: '2em 5em',
-          fontWeight: 'bold',
-          color: COLORS.WHITE
-
-        }}>
+        <TexturedSection className={classes.footer}>
           <h3>Contact South Seattle Fitness</h3>
           <div>
-            <a style={linkStyle} href="mailto:southseattlefitness@gmail.com">southseattlefitness@gmail.com</a>
+            <a className={classes.link} href="mailto:southseattlefitness@gmail.com">southseattlefitness@gmail.com</a>
           </div>
-          <div><a style={linkStyle} href="tel:7143817969">(714) 381-7969</a> | CAITLIN IBARRA</div>
-          <div><a style={linkStyle} href="tel:2069108049">(206) 910-8049</a> | RACHEL GARCIA</div>
+          <div><a className={classes.link} href="tel:7143817969">(714) 381-7969</a><span className={classes.name}>CAITLIN IBARRA</span></div>
+          <div><a className={classes.link} href="tel:2069108049">(206) 910-8049</a><span className={classes.name}>RACHEL GARCIA</span></div>
         </TexturedSection>
       </Layout>
     </ThemeProvider>
   );
-};
+});
 
 export default IndexPage
