@@ -57,7 +57,7 @@ const TealButton = withStyles(
   </Button>
 ));
 
-const TexturedSection = props => (
+const TexturedSection = ({ style, ...props }) => (
   <div style={{
     backgroundColor: COLORS.TEAL,
     backgroundImage: `url(${pattern})`,
@@ -66,7 +66,8 @@ const TexturedSection = props => (
     backgroundSize: 'auto',
     backgroundRepeat: 'repeat',
     borderTop: `2px solid ${COLORS.GREY}`,
-    borderBottom: `2px solid ${COLORS.GREY}`
+    borderBottom: `2px solid ${COLORS.GREY}`,
+    ...style
   }} {...props} />
 );
 
