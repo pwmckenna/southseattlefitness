@@ -4,15 +4,6 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles';
 
 const Header = withStyles(theme => ({
-  root: {
-    color: '#616365',
-    background: `#ffffff`
-  },
-  verticallyCentered: {
-    height: '100%',
-    display: 'grid',
-    alignItems: 'center'
-  },
   header: {
     [theme.breakpoints.up('md')]: {
       paddingLeft: 56
@@ -25,17 +16,24 @@ const Header = withStyles(theme => ({
     },
     margin: 0,
     fontWeight: 500
-  },
-  link: {
-    color: `#616365`,
-    textDecoration: `none`,
-    textAlign: 'center'
   }
 }))(({ style, classes, siteTitle }) => (
-  <div style={style} className={classes.root}>
-    <div className={classes.verticallyCentered}>
+  <div style={{
+    color: '#616365',
+    background: `#ffffff`,
+    ...style
+  }}>
+    <div style={{
+      height: '100%',
+      display: 'grid',
+      alignItems: 'center'
+    }}>
       <h1 className={classes.header}>
-        <Link to="/" className={classes.link}>{siteTitle}</Link>
+        <Link to="/" style={{
+          color: `#616365`,
+          textDecoration: `none`,
+          textAlign: 'center'
+        }}>{siteTitle}</Link>
       </h1>
     </div>
   </div>

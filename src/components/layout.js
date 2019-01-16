@@ -21,6 +21,7 @@ const Layout = ({ children }) => (
         <Header
           siteTitle={data.site.siteMetadata.title}
           style={{
+            backgroundColor: 'white',
             position: 'fixed',
             top: 0,
             left: 0,

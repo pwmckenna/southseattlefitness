@@ -129,8 +129,7 @@ const usePaperForm = () => {
   }, []);
 };
 
-
-const IndexPage = withStyles(theme => ({
+const ContactLink = withStyles(theme => ({
   link: {
     textDecoration: 'none',
     color: COLORS.DARK_GREY,
@@ -141,14 +140,16 @@ const IndexPage = withStyles(theme => ({
       paddingTop: '1em',
       display: 'block'
     }
-  },
+  }
+}))(({ classes, ...props }) => (
+  <a className={classes.link} {...props} />
+));
+
+const Footer = withStyles(theme => ({
   name: {
     [theme.breakpoints.up('sm')]: {
       paddingLeft: '1em'
     }
-  },
-  middle: {
-    height: 100
   },
   footer: {
     margin: '0em auto',
@@ -159,8 +160,18 @@ const IndexPage = withStyles(theme => ({
       padding: '2em'
     }
   }
-}))(({ classes }) => {
-  console.log({ classes })
+}))(({ classes }) => (
+  <TexturedSection className={classes.footer}>
+    <h3>Contact South Seattle Fitness</h3>
+    <div>
+      <ContactLink href="mailto:southseattlefitness@gmail.com">southseattlefitness@gmail.com</ContactLink>
+    </div>
+    <div><ContactLink href="tel:7143817969">(714) 381-7969</ContactLink><span className={classes.name}>CAITLIN IBARRA</span></div>
+    <div><ContactLink href="tel:2069108049">(206) 910-8049</ContactLink><span className={classes.name}>RACHEL GARCIA</span></div>
+  </TexturedSection>
+));
+
+const IndexPage = () => {
   usePaperForm();
   return (
     <ThemeProvider theme={theme}>
@@ -186,19 +197,14 @@ const IndexPage = withStyles(theme => ({
             View Studio Calendar
         </TealButton>
         </div>
-        <TexturedSection className={classes.middle} />
+        <TexturedSection style={{
+          height: 100
+        }} />
         <Programs />
-        <TexturedSection className={classes.footer}>
-          <h3>Contact South Seattle Fitness</h3>
-          <div>
-            <a className={classes.link} href="mailto:southseattlefitness@gmail.com">southseattlefitness@gmail.com</a>
-          </div>
-          <div><a className={classes.link} href="tel:7143817969">(714) 381-7969</a><span className={classes.name}>CAITLIN IBARRA</span></div>
-          <div><a className={classes.link} href="tel:2069108049">(206) 910-8049</a><span className={classes.name}>RACHEL GARCIA</span></div>
-        </TexturedSection>
+        <Footer />
       </Layout>
     </ThemeProvider>
   );
-});
+};
 
 export default IndexPage
