@@ -7,16 +7,18 @@ import SEO from '../components/seo'
 import pattern from '../images/texture.png';
 import background from '../images/background.jpeg';
 import Programs from '../components/programs';
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createMuiTheme, withStyles } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
 const theme = createMuiTheme();
 
 const COLORS = {
   WHITE: '#fff',
-  TEAL: '#3fcfd5',
+  GOLD: '#ffca17ad',
+  TEAL: '#3fcfd5ad',
   GREY: '#a1a3a5',
-  DARK_GREY: 'rgb(97, 99, 101)'
+  DARK_GREY: 'rgb(97, 99, 101)',
+  BROWN: '#351500aa'
 }
 
 const Button = ({ children, style, ...props }) => (
@@ -36,34 +38,32 @@ const Button = ({ children, style, ...props }) => (
   </a>
 );
 
-const TealButton = ({ children, ...props }) => (
-  <Button style={{
-    color: COLORS.WHITE,
-    backgroundColor: COLORS.TEAL
-  }} {...props}>
+const TealButton = withStyles(
+  theme => ({
+    button: {
+      color: COLORS.WHITE,
+      backgroundColor: '#3fcfd5ad',
+      '&:hover': {
+        backgroundColor: '#3fcfd5'
+      }
+    }
+  })
+)(({ children, classes, ...props }) => (
+  <Button className={classes.button} {...props}>
     {children}
   </Button>
-);
-
-const TransparentButton = ({ children }) => (
-  <Button style={{
-    color: COLORS.WHITE,
-    border: `2px solid ${COLORS.WHITE}`
-  }}>
-    {children}
-  </Button>
-);
+));
 
 const TexturedSection = ({ children, style }) => (
   <div style={{
-    backgroundColor: COLORS.TEAL,
+    backgroundColor: COLORS.BROWN,
     backgroundImage: `url(${pattern})`,
     backgroundPosition: '50% 0',
     backgroundAttachment: 'scroll',
     backgroundSize: 'auto',
     backgroundRepeat: 'repeat',
-    borderTop: `1px solid ${COLORS.GREY}`,
-    borderBottom: `1px solid ${COLORS.GREY}`,
+    borderTop: `2px solid ${COLORS.GREY}`,
+    borderBottom: `2px solid ${COLORS.GREY}`,
     ...style
   }}>
     {children}
@@ -129,7 +129,7 @@ const usePaperForm = () => {
   }, []);
 };
 
-const linkStyle = { textDecoration: 'none', color: COLORS.DARK_GREY };
+const linkStyle = { textDecoration: 'none', color: COLORS.WHITE };
 
 const IndexPage = () => {
   usePaperForm();
@@ -163,12 +163,12 @@ const IndexPage = () => {
           margin: `0em auto`,
           padding: '2em 5em',
           fontWeight: 'bold',
-          color: COLORS.DARK_GREY
+          color: COLORS.WHITE
 
         }}>
           <h3>Contact South Seattle Fitness</h3>
           <div>
-            <a style={linkStyle} href="southseattlefitness@gmail.com">southseattlefitness@gmail.com</a>
+            <a style={linkStyle} href="mailto:southseattlefitness@gmail.com">southseattlefitness@gmail.com</a>
           </div>
           <div><a style={linkStyle} href="tel:7143817969">(714) 381-7969</a> | CAITLIN IBARRA</div>
           <div><a style={linkStyle} href="tel:2069108049">(206) 910-8049</a> | RACHEL GARCIA</div>

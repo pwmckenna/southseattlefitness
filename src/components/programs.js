@@ -17,8 +17,7 @@ const styles = theme => ({
         position: 'relative',
         height: 300,
         width: 300,
-        margin: '3em auto',
-        backgroundColor: '#333'
+        margin: '3em auto'
     },
     link: {
         position: 'relative',
@@ -36,10 +35,10 @@ const styles = theme => ({
         bottom: '1.5em',
         border: '2px solid white',
         padding: '1em',
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         fontSize: '1.3em',
         '&:hover': {
-            backgroundColor: 'rgba(0, 0, 0, 0.0)'
+            backgroundColor: 'rgba(63, 207, 213, 0.2)'
         }
     }
 });
@@ -57,7 +56,7 @@ export default withStyles(styles)(({ classes }) => (
                                 height: '100%'
                             }} />
                             <div className={classes.text}>
-                                Fit4Mom Classes
+                                FIT4MOM Classes
                             </div>
                         </a>
                     </Paper>
