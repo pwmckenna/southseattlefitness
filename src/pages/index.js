@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
+import Grid from '@material-ui/core/Grid';
 
 import Layout from '../components/layout'
 import Image from '../components/images/studio'
@@ -10,6 +11,7 @@ import Programs from '../components/programs';
 import { createMuiTheme, withStyles } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import Map from '../components/map';
 
 const theme = createMuiTheme();
 
@@ -164,13 +166,20 @@ const Footer = withStyles(theme => ({
   }
 }))(({ classes }) => (
   <TexturedSection className={classes.footer}>
-    <h3>Contact South Seattle Fitness</h3>
-    <div>
-      <ContactLink href="mailto:southseattlefitness@gmail.com">southseattlefitness@gmail.com</ContactLink>
-    </div>
-    <div><ContactLink href="tel:7143817969">(714) 381-7969</ContactLink><span className={classes.name}>CAITLIN IBARRA</span></div>
-    <div><ContactLink href="tel:2069108049">(206) 910-8049</ContactLink><span className={classes.name}>RACHEL GARCIA</span></div>
-  </TexturedSection>
+    <Grid container justify="center" spacing={16}>
+      <Grid item alignContent="center" >
+        <h3>Contact South Seattle Fitness</h3>
+        <div>
+          <ContactLink href="mailto:southseattlefitness@gmail.com">southseattlefitness@gmail.com</ContactLink>
+        </div>
+        <div><ContactLink href="tel:7143817969">(714) 381-7969</ContactLink><span className={classes.name}>CAITLIN IBARRA</span></div>
+        <div><ContactLink href="tel:2069108049">(206) 910-8049</ContactLink><span className={classes.name}>RACHEL GARCIA</span></div>
+      </Grid>
+      <Grid item alignContent="center">
+        <Map />
+      </Grid>
+    </Grid>
+  </TexturedSection >
 ));
 
 const IndexPage = () => {
@@ -178,7 +187,7 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="SouthSeattleFitness" keywords={[`seattle`, `fitness`, `studio`]} />
+        <SEO title="SouthSeattleFitness" keywords={['seattle', 'fitness', 'studio', 'yoga', 'fit4mom', 'event rental']} />
         <div style={{
           position: 'relative',
           overflow: 'hidden',
