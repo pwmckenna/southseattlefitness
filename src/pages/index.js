@@ -194,7 +194,7 @@ const IndexPage = () => {
             width: '100%',
             zIndex: -1,
           }} />
-          <TealButton href="https://squareup.com/appointments/book/5Q4RPH7WJTFEC/south-seattle-fitness-seattle-wa">
+          <TealButton href="https://www.schedulicity.com/scheduling/SSFM3V">
             View Studio Calendar
         </TealButton>
         </div>

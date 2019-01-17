@@ -64,7 +64,7 @@ export default withStyles(styles)(({ classes }) => (
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Paper className={classes.paper}>
-                        <a href="https://squareup.com/appointments/book/16c2c6c3-69bb-467d-9220-a0ffbdf0cd91/5Q4RPH7WJTFEC/date" className={classes.link}>
+                        <a href="https://www.schedulicity.com/scheduling/SSFM3V" className={classes.link}>
                             <YogaImage className={classes.image} />
                             <div className={classes.text}>
                                 Yoga Schedule
