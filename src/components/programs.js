@@ -6,6 +6,7 @@ import Fit4MomImage from './images/fit4mom';
 import YogaImage from './images/yoga';
 import EventsImage from './images/events';
 import { grey } from '@material-ui/core/colors';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const styles = theme => ({
     root: {
@@ -54,32 +55,32 @@ export default withStyles(styles)(({ classes }) => (
             <Grid container justify="center" spacing={16}>
                 <Grid item xs={12} md={4}>
                     <Paper className={classes.paper}>
-                        <a href="https://southseattle.fit4mom.com/" className={classes.link}>
+                        <OutboundLink href="https://southseattle.fit4mom.com/" className={classes.link}>
                             <Fit4MomImage className={classes.image} />
                             <div className={classes.text}>
                                 FIT4MOM Classes
                             </div>
-                        </a>
+                        </OutboundLink>
                     </Paper>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Paper className={classes.paper}>
-                        <a href="https://www.schedulicity.com/scheduling/SSFM3V" className={classes.link}>
+                        <OutboundLink href="https://www.schedulicity.com/scheduling/SSFM3V" className={classes.link}>
                             <YogaImage className={classes.image} />
                             <div className={classes.text}>
                                 Yoga Schedule
                             </div>
-                        </a>
+                        </OutboundLink>
                     </Paper>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Paper className={classes.paper}>
-                        <a href="https://squareup.com/appointments/book/16c2c6c3-69bb-467d-9220-a0ffbdf0cd91/5Q4RPH7WJTFEC/staff" className={classes.link}>
+                        <OutboundLink href="https://squareup.com/appointments/book/16c2c6c3-69bb-467d-9220-a0ffbdf0cd91/5Q4RPH7WJTFEC/staff" className={classes.link}>
                             <EventsImage className={classes.image} />
                             <div className={classes.text}>
                                 Event Rentals
                             </div>
-                        </a>
+                        </OutboundLink>
                     </Paper>
                 </Grid>
             </Grid>

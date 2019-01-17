@@ -9,6 +9,7 @@ import background from '../images/background.jpeg';
 import Programs from '../components/programs';
 import { createMuiTheme, withStyles } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const theme = createMuiTheme();
 
@@ -25,7 +26,7 @@ const COLORS = {
 }
 
 const Button = ({ children, style, ...props }) => (
-  <a href="#" style={{
+  <OutboundLink href="#" style={{
     textDecoration: 'none',
     textTransform: 'uppercase',
     padding: '14px 42px',
@@ -38,7 +39,7 @@ const Button = ({ children, style, ...props }) => (
     ...style
   }} {...props}>
     {children}
-  </a>
+  </OutboundLink>
 );
 
 const TealButton = withStyles(
@@ -143,7 +144,7 @@ const ContactLink = withStyles(theme => ({
     }
   }
 }))(({ classes, ...props }) => (
-  <a className={classes.link} {...props} />
+  <OutboundLink className={classes.link} {...props} />
 ));
 
 const Footer = withStyles(theme => ({
