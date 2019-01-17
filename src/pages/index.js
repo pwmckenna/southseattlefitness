@@ -187,7 +187,7 @@ const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="SouthSeattleFitness" keywords={['seattle', 'fitness', 'studio', 'yoga', 'fit4mom', 'event rental']} />
+        <SEO title="SouthSeattleFitness" keywords={['seattle', 'fitness', 'studio', 'hiit', 'stroller strides', 'yoga', 'fit4mom', 'event rental', 'event space', 'party rental']} />
         <div style={{
           position: 'relative',
           overflow: 'hidden',
