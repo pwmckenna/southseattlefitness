@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react'
-import { Link } from 'gatsby'
+import EventsImage from '../components/images/events';
+import Fit4MomImage from '../components/images/fit4mom';
 import Grid from '@material-ui/core/Grid';
-
-import Layout from '../components/layout'
 import Image from '../components/images/studio'
-import SEO from '../components/seo'
-import pattern from '../images/texture.png';
-import background from '../images/background.jpeg';
-import Programs from '../components/programs';
-import { createMuiTheme, withStyles } from "@material-ui/core/styles";
-import { ThemeProvider } from "@material-ui/styles";
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import Layout from '../components/layout'
 import Map from '../components/map';
+import Paper from '@material-ui/core/Paper';
+import React, { useEffect } from 'react'
+import SEO from '../components/seo'
+import YogaImage from '../components/images/yoga';
+import background from '../images/background.jpeg';
+import pattern from '../images/texture.png';
+import { Link } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme, withStyles } from "@material-ui/core/styles";
+import { grey } from '@material-ui/core/colors';
 
 const theme = createMuiTheme();
 
@@ -25,7 +28,10 @@ const COLORS = {
   DARK_GREY: '#616365',
   BROWN: '#28100099',
   BLACK: '#333'
-}
+};
+
+const STUDIO_CALENDAR_LINK = 'https://clients.mindbodyonline.com/classic/ws?studioid=693989&stype=-7&sView=day&sLoc=0';
+const YOGA_CALENDAR_LINK = STUDIO_CALENDAR_LINK;
 
 const Button = ({ children, style, ...props }) => (
   <OutboundLink href="#" style={{
@@ -149,6 +155,84 @@ const ContactLink = withStyles(theme => ({
   <OutboundLink className={classes.link} {...props} />
 ));
 
+const Programs = withStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    maxWidth: 1280,
+    margin: '0 auto'
+  },
+  paper: {
+    position: 'relative',
+    height: 300,
+    width: 300,
+    margin: '3em auto'
+  },
+  link: {
+    position: 'relative',
+    display: 'block',
+    height: '100%',
+    width: '100%',
+    color: 'white',
+    textDecoration: 'none',
+  },
+  text: {
+    position: 'absolute',
+    top: '1.5em',
+    left: '1.5em',
+    right: '1.5em',
+    bottom: '1.5em',
+    border: '2px solid white',
+    padding: '1em',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    fontSize: '1.3em',
+    '&:hover': {
+      backgroundColor: 'rgba(63, 207, 213, 0.2)'
+    }
+  },
+  image: {
+    width: '100%',
+    height: '100%'
+  }
+}))(({ classes }) => (
+  <Grid container className={classes.root} spacing={16}>
+    <Grid item xs={12}>
+      <Grid container justify="center" spacing={16}>
+        <Grid item xs={12} md={4}>
+          <Paper className={classes.paper}>
+            <OutboundLink href="https://southseattle.fit4mom.com/" className={classes.link}>
+              <Fit4MomImage className={classes.image} />
+              <div className={classes.text}>
+                FIT4MOM Classes
+                            </div>
+            </OutboundLink>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Paper className={classes.paper}>
+            <OutboundLink href={YOGA_CALENDAR_LINK} className={classes.link}>
+              <YogaImage className={classes.image} />
+              <div className={classes.text}>
+                Yoga Schedule
+                            </div>
+            </OutboundLink>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Paper className={classes.paper}>
+            <OutboundLink href="mailto:southseattlefitness@gmail.com?subject=Event%20Rentals" className={classes.link}>
+              <EventsImage className={classes.image} />
+              <div className={classes.text}>
+                Event Rentals
+                            </div>
+            </OutboundLink>
+          </Paper>
+        </Grid>
+      </Grid>
+    </Grid>
+  </Grid>
+));
+
+
 const Footer = withStyles(theme => ({
   name: {
     [theme.breakpoints.up('sm')]: {
@@ -204,7 +288,7 @@ const IndexPage = () => {
             width: '100%',
             zIndex: -1,
           }} />
-          <TealButton href="https://www.schedulicity.com/scheduling/SSFM3V">
+          <TealButton href={STUDIO_CALENDAR_LINK}>
             View Studio Calendar
         </TealButton>
         </div>
