@@ -16,6 +16,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme, withStyles } from "@material-ui/core/styles";
 import { grey } from '@material-ui/core/colors';
 import Schedule from '../components/yoga-calendar';
+import withRoot from '../utils/with-root';
 
 const theme = createMuiTheme();
 
@@ -188,7 +189,7 @@ const EventRentalPage = () => {
                 <div style={{
                     position: 'relative',
                     overflow: 'hidden',
-                    height: 200,
+                    height: 250,
                     display: 'grid',
                     alignItems: 'center',
                     justifyItems: 'center'
@@ -219,4 +220,4 @@ const EventRentalPage = () => {
     );
 };
 
-export default EventRentalPage
+export default withRoot(EventRentalPage);

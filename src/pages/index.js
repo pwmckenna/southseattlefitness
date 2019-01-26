@@ -16,6 +16,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme, withStyles } from "@material-ui/core/styles";
 import { grey } from '@material-ui/core/colors';
 import Paperform from '../components/paperform';
+import withRoot from '../utils/with-root';
 
 const theme = createMuiTheme();
 
@@ -291,4 +292,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage
+export default withRoot(IndexPage);
