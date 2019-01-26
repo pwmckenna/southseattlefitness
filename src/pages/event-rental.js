@@ -15,7 +15,7 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme, withStyles } from "@material-ui/core/styles";
 import { grey } from '@material-ui/core/colors';
-import Paperform from '../components/paperform';
+import Schedule from '../components/event-calendar';
 
 const theme = createMuiTheme();
 
@@ -147,84 +147,6 @@ const ContactLink = withStyles(theme => ({
   <OutboundLink className={classes.link} {...props} />
 ));
 
-const Programs = withStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    maxWidth: 1280,
-    margin: '0 auto'
-  },
-  paper: {
-    position: 'relative',
-    height: 300,
-    width: 300,
-    margin: '3em auto'
-  },
-  link: {
-    position: 'relative',
-    display: 'block',
-    height: '100%',
-    width: '100%',
-    color: 'white',
-    textDecoration: 'none',
-  },
-  text: {
-    position: 'absolute',
-    top: '1.5em',
-    left: '1.5em',
-    right: '1.5em',
-    bottom: '1.5em',
-    border: '2px solid white',
-    padding: '1em',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    fontSize: '1.3em',
-    '&:hover': {
-      backgroundColor: 'rgba(63, 207, 213, 0.2)'
-    }
-  },
-  image: {
-    width: '100%',
-    height: '100%'
-  }
-}))(({ classes }) => (
-  <Grid container className={classes.root} spacing={16}>
-    <Grid item xs={12}>
-      <Grid container justify="center" spacing={16}>
-        <Grid item xs={12} md={4}>
-          <Paper className={classes.paper}>
-            <OutboundLink href="https://southseattle.fit4mom.com/" className={classes.link}>
-              <Fit4MomImage className={classes.image} />
-              <div className={classes.text}>
-                FIT4MOM Classes
-              </div>
-            </OutboundLink>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper className={classes.paper}>
-            <OutboundLink href="/yoga" className={classes.link}>
-              <YogaImage className={classes.image} />
-              <div className={classes.text}>
-                Yoga Schedule
-              </div>
-            </OutboundLink>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper className={classes.paper}>
-            <OutboundLink href="/event-rental" className={classes.link}>
-              <EventsImage className={classes.image} />
-              <div className={classes.text}>
-                Event Rental
-              </div>
-            </OutboundLink>
-          </Paper>
-        </Grid>
-      </Grid>
-    </Grid>
-  </Grid>
-));
-
-
 const Footer = withStyles(theme => ({
   name: {
     [theme.breakpoints.up('sm')]: {
@@ -258,16 +180,15 @@ const Footer = withStyles(theme => ({
   </TexturedSection >
 ));
 
-const IndexPage = () => {
+const EventRentalPage = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Paperform />
       <Layout>
         <SEO title="SouthSeattleFitness" keywords={['seattle', 'fitness', 'studio', 'hiit', 'stroller strides', 'yoga', 'fit4mom', 'event rental', 'event space', 'party rental']} />
         <div style={{
           position: 'relative',
           overflow: 'hidden',
-          height: 360,
+          height: 250,
           display: 'grid',
           alignItems: 'center',
           justifyItems: 'center'
@@ -284,11 +205,18 @@ const IndexPage = () => {
         <TexturedSection style={{
           height: 100
         }} />
-        <Programs />
+        <div style={{
+          margin: '0 auto',
+          width: '100%',
+          maxWidth: 300,
+          minHeight: 100
+        }}>
+          <Schedule />
+        </div>
         <Footer />
       </Layout>
     </ThemeProvider>
   );
 };
 
-export default IndexPage
+export default EventRentalPage
