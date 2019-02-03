@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+import * as COLORS from '../utils/colors';
 import Header from './header'
 import './layout.css'
+
+const theme = createMuiTheme();
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -17,7 +21,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <ThemeProvider theme={theme}>
         <Header
           siteTitle={data.site.siteMetadata.title}
           style={{
@@ -28,7 +32,7 @@ const Layout = ({ children }) => (
             width: '100%',
             height: '5em',
             zIndex: 1,
-            borderBottom: '1px solid #222'
+            borderBottom: `2px solid ${COLORS.GREY}`
           }}
         />
         <div
@@ -39,7 +43,7 @@ const Layout = ({ children }) => (
         >
           {children}
         </div>
-      </>
+      </ThemeProvider>
     )}
   />
 )

@@ -16,6 +16,7 @@ const Header = withStyles(theme => ({
     },
     margin: 0,
     fontWeight: 500
+
   }
 }))(({ style, classes, siteTitle }) => (
   <div style={{

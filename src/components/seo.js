@@ -54,9 +54,9 @@ function SEO({ description, lang, meta, keywords, title }) {
               .concat(
                 keywords.length > 0
                   ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
+                    name: `keywords`,
+                    content: keywords.join(`, `),
+                  }
                   : []
               )
               .concat(meta)}
@@ -70,15 +70,36 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
+  keywords: [
+    'Women\'s workout',
+    'Sout Seattle yoga',
+    'Fitness for women',
+    'HIIT classes',
+    'pre-natal',
+    'post-natal',
+    'Fitness for moms',
+    'Group exercise classes',
+    'Cardio classes',
+    'Fitness classes',
+    'Event rental',
+    'Event space',
+    'Fit4mom',
+    'Fitness',
+    'Hiit',
+    'Party rental',
+    'Seattle',
+    'Stroller strides',
+    'Studio',
+    'Yoga'
+  ]
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
 }
 
 export default SEO

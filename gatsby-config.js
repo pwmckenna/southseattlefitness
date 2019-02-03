@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `South Seattle Fitness`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `South Seattle Home offers FIT4MOM classes, including HIIT, stroller based exercises, pre and post-natal classes, as well as restorative or vinyasa yoga classes. Come join us at our studio in south Beacon Hill.`,
+    author: `@southseattlefitness`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,6 +31,12 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-132688472-1'
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '397844000782224',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
