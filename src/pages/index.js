@@ -104,7 +104,14 @@ const Programs = withStyles(theme => ({
             <OutboundLink href="/event-rental" className={classes.link}>
               <EventsImage className={classes.image} />
               <div className={classes.text}>
-                <h3>Event Rental</h3>
+                <div className="before">
+                  <h3>Event Rental</h3>
+                </div>
+                <div className="after">
+                  <h4>Birthday Party?</h4>
+                  <h4>Baby Shower?</h4>
+                  <h4>Other?</h4>
+                </div>
               </div>
             </OutboundLink>
           </Paper>

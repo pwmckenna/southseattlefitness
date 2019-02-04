@@ -32,10 +32,26 @@ const EventRentalPage = () => (
       <Grid container justify="center" spacing={16}>
         <Grid item style={{
           padding: '35px 0 15px',
-          textAlign: 'center'
+          textAlign: 'center',
+          margin: '2em auto',
+          width: '80%',
+          maxWidth: 800,
+          minHeight: 100
         }}>
           <h2>Event Rentals</h2>
-          {/* <p>Home of FIT4MOM South Seattle, regular yoga classes and occasional event rentals.</p> */}
+          <p>We are now offering our beautiful new studio space for event rentals! Located on the corner of Beacon and Graham on Beacon Hill, our space is easy to get to and has just what you need for your party, including:</p>
+          <ul style={{
+            width: '80%',
+            maxWidth: 500,
+            textAlign: 'left',
+            margin: '0 auto'
+          }}>
+            <li style={{ listStyle: 'none' }}>Large (750 square feet) open room with bamboo floors and tons of light</li>
+            <li style={{ listStyle: 'none' }}>Outdoor yard (950 square feed) with artificial grass and strings of lights</li>
+            <li style={{ listStyle: 'none' }}>A kitchenette with microwave, mini-fridge and freezer</li>
+            <li style={{ listStyle: 'none' }}>A living room space with love seat and chairs</li>
+            <li style={{ listStyle: 'none' }}>Maximum capacity of 60</li>
+          </ul>
         </Grid>
       </Grid>
     </TexturedSection>
