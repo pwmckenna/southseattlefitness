@@ -13,6 +13,7 @@ import YogaImage from '../components/images/yoga';
 import withRoot from '../utils/with-root';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { withStyles } from "@material-ui/core/styles";
+import * as COLORS from '../utils/colors';
 
 const Programs = withStyles(theme => ({
   root: {
@@ -45,7 +46,16 @@ const Programs = withStyles(theme => ({
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
     fontSize: '1.3em',
     '&:hover': {
-      backgroundColor: 'rgba(63, 207, 213, 0.6)'
+      backgroundColor: `${COLORS.TEAL}aa`,
+      '& .before': {
+        display: 'none'
+      },
+      '& .after': {
+        display: 'inherit'
+      }
+    },
+    '& .after': {
+      display: 'none'
     }
   },
   image: {
@@ -61,7 +71,14 @@ const Programs = withStyles(theme => ({
             <OutboundLink href="https://southseattle.fit4mom.com/" className={classes.link}>
               <Fit4MomImage className={classes.image} />
               <div className={classes.text}>
-                <h3>FIT4MOM</h3>
+                <div className="before">
+                  <h3>FIT4MOM</h3>
+                </div>
+                <div className="after">
+                  <h4>HIIT</h4>
+                  <h4>Pre/Post-Natal</h4>
+                  <h4>Stroller Strides</h4>
+                </div>
               </div>
             </OutboundLink>
           </Paper>
@@ -71,7 +88,13 @@ const Programs = withStyles(theme => ({
             <OutboundLink href="/yoga" className={classes.link}>
               <YogaImage className={classes.image} />
               <div className={classes.text}>
-                <h3>Yoga</h3>
+                <div className="before">
+                  <h3>Yoga</h3>
+                </div>
+                <div className="after">
+                  <h4>Vinyasa Flow</h4>
+                  <h4>Restorative/Slow Flow</h4>
+                </div>
               </div>
             </OutboundLink>
           </Paper>
