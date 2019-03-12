@@ -149,7 +149,7 @@ const IndexPage = () => {
         <Grid container justify="center" spacing={16}>
           <Grid item style={{
             maxWidth: '800px',
-            padding: '35px 0',
+            padding: '35px',
             fontSize: '20px',
             textAlign: 'center'
           }}>
