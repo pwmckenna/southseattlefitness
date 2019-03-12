@@ -45,10 +45,7 @@ const Programs = withStyles(theme => ({
     padding: '1em',
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
     fontSize: '1.3em',
-    [theme.breakpoints.down('xs')]: {
-      backgroundColor: `${COLORS.TEAL}aa`,
-    },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       '&:hover': {
         backgroundColor: `${COLORS.TEAL}aa`,
         '& .before': {
