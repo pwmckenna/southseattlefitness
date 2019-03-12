@@ -145,11 +145,13 @@ const IndexPage = () => (
     <TexturedSection>
       <Grid container justify="center" spacing={16}>
         <Grid item style={{
+          maxWidth: '800px',
           padding: '35px 0 15px',
           textAlign: 'center'
         }}>
           <h2>Welcome to South Seattle Fitness</h2>
-          {/* <p>Home of FIT4MOM South Seattle, regular yoga classes and occasional event rentals.</p> */}
+          <p>South Seattle Fitness is your place to thrive through pre-natal, post-natal, and HIIT FIT4MOM classes, flowing yoga practices, wellness workshops, and community events.</p>
+          <p style={{ fontWeight: 'bold' }}>Your first class is free. Check us out today!</p>
         </Grid>
       </Grid>
     </TexturedSection>
