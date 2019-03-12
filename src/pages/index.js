@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import Image from '../components/images/studio'
 import Layout from '../components/layout'
 import Paper from '@material-ui/core/Paper';
-import Paperform from '../components/paperform';
 import React from 'react'
 import SEO from '../components/seo'
 import TexturedSection from '../components/textured-section';
@@ -14,6 +13,7 @@ import withRoot from '../utils/with-root';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { withStyles } from "@material-ui/core/styles";
 import * as COLORS from '../utils/colors';
+import { use as usePaperform, show as showPaperform } from '../utils/paperform';
 
 const Programs = withStyles(theme => ({
   root: {
@@ -123,44 +123,59 @@ const Programs = withStyles(theme => ({
   </Grid>
 ));
 
-const IndexPage = () => (
-  <Layout>
-    <Paperform />
-    <SEO title="South Seattle Fitness" />
-    <div style={{
-      position: 'relative',
-      overflow: 'hidden',
-      height: 360,
-      display: 'grid',
-      alignItems: 'center',
-      justifyItems: 'center'
-    }}>
-      <Image style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        height: '100%',
-        width: '100%',
-        zIndex: -1,
-      }} />
-    </div>
-    <TexturedSection>
-      <Grid container justify="center" spacing={16}>
-        <Grid item style={{
-          maxWidth: '800px',
-          padding: '35px 0 15px',
-          fontSize: '20px',
-          textAlign: 'center'
-        }}>
-          <h2>Welcome to South Seattle Fitness</h2>
-          <p>South Seattle Fitness is your place to thrive through pre-natal, post-natal, and HIIT FIT4MOM classes, flowing yoga practices, wellness workshops, and community events.</p>
-          <p style={{ fontWeight: 'bold' }}>Your first class is free. Check us out today!</p>
+const IndexPage = () => {
+  usePaperform();
+  return (
+    <Layout>
+      <SEO title="South Seattle Fitness" />
+      <div style={{
+        position: 'relative',
+        overflow: 'hidden',
+        height: 360,
+        display: 'grid',
+        alignItems: 'center',
+        justifyItems: 'center'
+      }}>
+        <Image style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          height: '100%',
+          width: '100%',
+          zIndex: -1,
+        }} />
+      </div>
+      <TexturedSection>
+        <Grid container justify="center" spacing={16}>
+          <Grid item style={{
+            maxWidth: '800px',
+            padding: '35px 0',
+            fontSize: '20px',
+            textAlign: 'center'
+          }}>
+            <h2>Welcome to South Seattle Fitness</h2>
+            <p>South Seattle Fitness is your place to thrive through pre-natal, post-natal, and HIIT FIT4MOM classes, flowing yoga practices, wellness workshops, and community events.</p>
+            <a
+              href="#"
+              onClick={e => {
+                e.preventDefault();
+                showPaperform();
+              }}
+              style={{
+                fontWeight: 'bold',
+                color: 'inherit',
+                textDecoration: 'none'
+              }}
+            >
+              Your first class is free. Check us out today!
+            </a>
+          </Grid>
         </Grid>
-      </Grid>
-    </TexturedSection>
-    <Programs />
-    <Footer />
-  </Layout>
-);
+      </TexturedSection>
+      <Programs />
+      <Footer />
+    </Layout>
+  );
+};
 
 export default withRoot(IndexPage);
