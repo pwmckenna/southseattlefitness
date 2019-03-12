@@ -95,7 +95,7 @@ const Programs = withStyles(theme => ({
                 </div>
                 <div className="after">
                   <h4>Vinyasa Flow</h4>
-                  <h4>Restorative/Slow Flow</h4>
+                  <h4>Stretch and Flow</h4>
                 </div>
               </div>
             </OutboundLink>
@@ -149,6 +149,7 @@ const IndexPage = () => (
         <Grid item style={{
           maxWidth: '800px',
           padding: '35px 0 15px',
+          fontSize: '20px',
           textAlign: 'center'
         }}>
           <h2>Welcome to South Seattle Fitness</h2>
