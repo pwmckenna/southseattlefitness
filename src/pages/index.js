@@ -95,7 +95,7 @@ const Programs = withStyles(theme => ({
                 </div>
                 <div className="after">
                   <h4>Vinyasa Flow</h4>
-                  <h4>Stretch and Flow</h4>
+                  <h4>Flow & Stretch</h4>
                 </div>
               </div>
             </OutboundLink>
