@@ -45,17 +45,22 @@ const Programs = withStyles(theme => ({
     padding: '1em',
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
     fontSize: '1.3em',
-    '&:hover': {
+    [theme.breakpoints.down('xs')]: {
       backgroundColor: `${COLORS.TEAL}aa`,
-      '& .before': {
-        display: 'none'
+    },
+    [theme.breakpoints.up('sm')]: {
+      '&:hover': {
+        backgroundColor: `${COLORS.TEAL}aa`,
+        '& .before': {
+          display: 'none'
+        },
+        '& .after': {
+          display: 'inherit'
+        }
       },
       '& .after': {
-        display: 'inherit'
+        display: 'none'
       }
-    },
-    '& .after': {
-      display: 'none'
     }
   },
   image: {
