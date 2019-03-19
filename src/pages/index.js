@@ -148,9 +148,9 @@ const IndexPage = () => {
       <TexturedSection>
         <Grid container justify="center" spacing={16}>
           <Grid item style={{
-            maxWidth: '800px',
-            padding: '35px',
-            fontSize: '20px',
+            maxWidth: 800,
+            padding: 45,
+            fontSize: 20,
             textAlign: 'center'
           }}>
             <h2>Welcome to South Seattle Fitness</h2>

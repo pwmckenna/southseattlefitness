@@ -31,9 +31,9 @@ const EventRentalPage = () => (
     <TexturedSection>
       <Grid container justify="center" spacing={16}>
         <Grid item style={{
-          padding: '35px 0 15px',
+          padding: 45,
           textAlign: 'center',
-          margin: '2em auto',
+          margin: '0 auto',
           width: '80%',
           maxWidth: 800,
           minHeight: 100

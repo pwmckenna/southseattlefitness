@@ -58,11 +58,23 @@ const EventRentalPage = () => (
     <TexturedSection>
       <Grid container justify="center" spacing={16}>
         <Grid item style={{
-          padding: '35px 0 15px',
+          maxWidth: 800,
+          padding: 45,
+          fontSize: 20,
           textAlign: 'center'
         }}>
           <h2>Yoga</h2>
-          {/* <p>Home of FIT4MOM South Seattle, regular yoga classes and occasional event rentals.</p> */}
+          <p>South Seattle Fitness offers calming Flow & Stretch and breath-led Vinyasa Flow classes in our beautiful studio. Increase your flexibility and strength, release tension, improve balance, and calm and steady the mind.</p> 
+          <p
+            style={{
+              fontWeight: 'bold',
+              color: 'inherit',
+              textDecoration: 'none',
+              marginBottom: 0
+            }}
+          >
+            Classes are for all abilities and levels. Your first class is free. Sign up today!
+          </p>
         </Grid>
       </Grid>
     </TexturedSection>
