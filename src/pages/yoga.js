@@ -64,7 +64,7 @@ const EventRentalPage = () => (
           textAlign: 'center'
         }}>
           <h2>Yoga</h2>
-          <p>South Seattle Fitness offers calming Flow & Stretch and breath-led Vinyasa Flow classes in our beautiful studio. Increase your flexibility and strength, release tension, improve balance, and calm and steady the mind.</p> 
+          <p>South Seattle Fitness offers calming Hatha Slow Flow and breath-led Vinyasa Flow classes in our beautiful studio. Increase your flexibility and strength, release tension, improve balance, and calm and steady the mind.</p> 
           <p
             style={{
               fontWeight: 'bold',

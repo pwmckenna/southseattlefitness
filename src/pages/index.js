@@ -94,8 +94,8 @@ const Programs = withStyles(theme => ({
                   <h3>Yoga</h3>
                 </div>
                 <div className="after">
+                  <h4>Hatha Slow Flow</h4>
                   <h4>Vinyasa Flow</h4>
-                  <h4>Flow & Stretch</h4>
                 </div>
               </div>
             </OutboundLink>
