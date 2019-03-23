@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deploy": "rm -rf public && npm run build && now ./public -A ../now.json && now alias",
+    "deploy": "rm -rf public && npm run build && now ./public -A ../now.json --target production",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "core-js": "^2.6.2",
-    "now": "^13.1.2",
+    "now": "^14.2.3",
     "nwb": "^0.23.0",
     "prettier": "^1.15.2"
   },
