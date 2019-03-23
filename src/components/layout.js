@@ -5,6 +5,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import * as COLORS from '../utils/colors';
 import Header from './header'
+
 import './layout.css'
 
 const theme = createMuiTheme();
@@ -26,18 +27,14 @@ const Layout = ({ children }) => (
           siteTitle={data.site.siteMetadata.title}
           style={{
             backgroundColor: 'white',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '5em',
             zIndex: 1,
             borderBottom: `2px solid ${COLORS.GREY}`
           }}
         />
+
         <div
           style={{
-            margin: `5em auto 0`,
+            margin: `0 auto`,
             maxWidth: `100%`
           }}
         >

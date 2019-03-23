@@ -70,7 +70,7 @@ const Programs = withStyles(theme => ({
       <Grid container justify="center" spacing={16}>
         <Grid item xs={12} md={4}>
           <Paper className={classes.paper}>
-            <OutboundLink href="https://southseattle.fit4mom.com/" className={classes.link}>
+            <OutboundLink href="https://southseattle.fit4mom.com/classes" className={classes.link}>
               <Fit4MomImage className={classes.image} />
               <div className={classes.text}>
                 <div className="before">
