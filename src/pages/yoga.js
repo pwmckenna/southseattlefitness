@@ -22,9 +22,9 @@ const Information = withStyles(theme => ({
     margin: '3em auto'
   }
 }))(({ classes }) => (
-  <Grid container className={classes.root} spacing={16}>
+  <Grid container className={classes.root}>
     <Grid item xs={12}>
-      <Grid container justify="center" spacing={16}>
+      <Grid container justify="center">
         <Grid item xs={12} md={12}>
           <Paper className={classes.paper}>
             <Calendar />
@@ -56,7 +56,7 @@ const EventRentalPage = () => (
       }} />
     </div>
     <TexturedSection>
-      <Grid container justify="center" spacing={16}>
+      <Grid container justify="center">
         <Grid item style={{
           maxWidth: 800,
           padding: 45,

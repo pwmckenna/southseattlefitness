@@ -29,7 +29,7 @@ const EventRentalPage = () => (
       }} />
     </div>
     <TexturedSection>
-      <Grid container justify="center" spacing={16}>
+      <Grid container justify="center">
         <Grid item style={{
           padding: 45,
           textAlign: 'center',
