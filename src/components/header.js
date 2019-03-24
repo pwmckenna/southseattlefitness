@@ -44,6 +44,21 @@ export default withStyles(theme => ({
     },
   }
 }))(({ style, classes, siteTitle }) => {
+  const links = [
+    <OutboundLink className={classes.button} href="https://southseattle.fit4mom.com/classes">
+      <Button color="inherit">FIT4MOM</Button>
+    </OutboundLink>,
+    <Link to="/yoga" className={classes.button}>
+      <Button color="inherit">Yoga</Button>
+    </Link>,
+    <Link to="/event-rental" className={classes.button}>
+      <Button color="inherit">Event Rentals</Button>
+    </Link>,
+    <Link to="/about-us" className={classes.button}>
+      <Button color="inherit">About Us</Button>
+    </Link>
+  ];
+
   const [open, setOpen] = useState(false);
   return (
     <AppBar position="static" className={classes.root}>
@@ -51,37 +66,22 @@ export default withStyles(theme => ({
         <Typography variant="h5" color="inherit" className={classes.title}>
           <Link to="/" className={classes.link}>{siteTitle}</Link>
         </Typography>
-        
-        <OutboundLink className={cx(classes.button, classes.inlineLink)} href="https://southseattle.fit4mom.com/classes">
-          <Button color="inherit">FIT4MOM</Button>
-        </OutboundLink>
-        <Link to="/yoga" className={cx(classes.button, classes.inlineLink)}>
-          <Button color="inherit">Yoga</Button>
-        </Link>
-        <Link to="/event-rental" className={cx(classes.button, classes.inlineLink)}>
-          <Button color="inherit">Event Rentals</Button>
-        </Link>
+        {links.map(link => (
+          <div className={classes.inlineLink}>
+            {link}
+          </div>
+        ))}
 
         {open || <ExpandMore className={classes.dropdownLink} onClick={() => setOpen(true)} />}
         {open && <ExpandLess className={classes.dropdownLink} onClick={() => setOpen(false)} />}
       </Toolbar>
       {open && (
         <>
-          <Toolbar className={classes.dropdownLink}>
-            <OutboundLink className={classes.button} href="https://southseattle.fit4mom.com/classes">
-              <Button color="inherit">FIT4MOM</Button>
-            </OutboundLink>
-          </Toolbar>
-          <Toolbar className={classes.dropdownLink}>
-            <Link to="/yoga" className={classes.button}>
-              <Button color="inherit">Yoga</Button>
-            </Link>
-          </Toolbar>
-          <Toolbar className={classes.dropdownLink}>
-            <Link to="/event-rental" className={classes.button}>
-              <Button color="inherit">Event Rentals</Button>
-            </Link>
-          </Toolbar>
+          {links.map(link => (
+            <Toolbar className={classes.dropdownLink}>
+              {link}
+            </Toolbar>
+          ))}
         </>
       )}
     </AppBar>
