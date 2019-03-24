@@ -17,6 +17,7 @@ const Photos = withStyles(theme => ({
     flexGrow: 1,
     maxWidth: 1280,
     margin: '0 auto',
+    fontSize: 20,
     minHeight: 100
   },
   paper: {

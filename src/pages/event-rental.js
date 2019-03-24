@@ -35,6 +35,7 @@ const EventRentalPage = () => (
           textAlign: 'center',
           margin: '0 auto',
           width: '80%',
+          fontSize: 20,
           maxWidth: 800,
           minHeight: 100
         }}>
