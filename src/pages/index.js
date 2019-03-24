@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import EventsImage from '../components/images/events';
 import Fit4MomImage from '../components/images/fit4mom';
 import Footer from '../components/footer';
@@ -87,7 +88,7 @@ const Programs = withStyles(theme => ({
         </Grid>
         <Grid item xs={12} md={4}>
           <Paper className={classes.paper}>
-            <OutboundLink href="/yoga" className={classes.link}>
+            <Link to="/yoga" className={classes.link}>
               <YogaImage className={classes.image} />
               <div className={classes.text}>
                 <div className="before">
@@ -98,12 +99,12 @@ const Programs = withStyles(theme => ({
                   <h4>Vinyasa Flow</h4>
                 </div>
               </div>
-            </OutboundLink>
+            </Link>
           </Paper>
         </Grid>
         <Grid item xs={12} md={4}>
           <Paper className={classes.paper}>
-            <OutboundLink href="/event-rental" className={classes.link}>
+            <Link to="/event-rental" className={classes.link}>
               <EventsImage className={classes.image} />
               <div className={classes.text}>
                 <div className="before">
@@ -115,7 +116,7 @@ const Programs = withStyles(theme => ({
                   <h4>Other?</h4>
                 </div>
               </div>
-            </OutboundLink>
+            </Link>
           </Paper>
         </Grid>
       </Grid>

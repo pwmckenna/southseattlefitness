@@ -49,17 +49,18 @@ export default withStyles(theme => ({
     <AppBar position="static" className={classes.root}>
       <Toolbar>
         <Typography variant="h5" color="inherit" className={classes.title}>
-          <OutboundLink href="/" className={classes.link}>{siteTitle}</OutboundLink>
+          <Link to="/" className={classes.link}>{siteTitle}</Link>
         </Typography>
         
         <OutboundLink className={cx(classes.button, classes.inlineLink)} href="https://southseattle.fit4mom.com/classes">
           <Button color="inherit">FIT4MOM</Button>
         </OutboundLink>
-        <OutboundLink href="/yoga" className={cx(classes.button, classes.inlineLink)}>
-          <Button color="inherit">Yoga</Button></OutboundLink>
-        <OutboundLink href="/event-rental" className={cx(classes.button, classes.inlineLink)}>
+        <Link to="/yoga" className={cx(classes.button, classes.inlineLink)}>
+          <Button color="inherit">Yoga</Button>
+        </Link>
+        <Link to="/event-rental" className={cx(classes.button, classes.inlineLink)}>
           <Button color="inherit">Event Rentals</Button>
-        </OutboundLink>
+        </Link>
 
         {open || <ExpandMore className={classes.dropdownLink} onClick={() => setOpen(true)} />}
         {open && <ExpandLess className={classes.dropdownLink} onClick={() => setOpen(false)} />}
@@ -72,14 +73,14 @@ export default withStyles(theme => ({
             </OutboundLink>
           </Toolbar>
           <Toolbar className={classes.dropdownLink}>
-            <OutboundLink href="/yoga" className={classes.button}>
+            <Link to="/yoga" className={classes.button}>
               <Button color="inherit">Yoga</Button>
-            </OutboundLink>
+            </Link>
           </Toolbar>
           <Toolbar className={classes.dropdownLink}>
-            <OutboundLink href="/event-rental" className={classes.button}>
+            <Link to="/event-rental" className={classes.button}>
               <Button color="inherit">Event Rentals</Button>
-            </OutboundLink>
+            </Link>
           </Toolbar>
         </>
       )}
