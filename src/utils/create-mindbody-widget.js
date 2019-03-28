@@ -1,14 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-import { createScript } from './';
+import createScript from './create-script';
 
 // every widget must be created before the healcode code is executed because their webcomponent code is run prior 
 // to the attributes being added (which they assume are set)
-export default (type, id) => {
+export default (type, id, version) => {
+    if (typeof document === 'undefined') {
+        return () => null;
+    }
     const widget = document.createElement('healcode-widget');
-    widget.setAttribute('data-type', 'schedules');
+    widget.setAttribute('data-type', type);
     widget.setAttribute('data-widget-partner', 'object');
-    widget.setAttribute('data-widget-id', '3697267b43a');
-    widget.setAttribute('data-widget-version', '1');
+    widget.setAttribute('data-widget-id', id);
+    widget.setAttribute('data-widget-version', version);
 
     return () => {
         const ref = useRef();

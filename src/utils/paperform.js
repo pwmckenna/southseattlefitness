@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { createScript } from '.';
+import createScript from './create-script';
 
 export const load = () => createScript('https://paperform.co/__embed');
 export const show = () => window.Paperform.popup('you1pfhj');
