@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `South Seattle Fitness`,
     description: `South Seattle Home offers FIT4MOM classes, including HIIT, stroller based exercises, pre and post-natal classes, as well as restorative or vinyasa yoga classes. Come join us at our studio in south Beacon Hill.`,
-    author: `@southseattlefitness`
+    author: `@southseattlefitness`,
+    siteUrl: 'https://southseattlefitness.com'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -39,6 +40,8 @@ module.exports = {
         pixelId: '397844000782224',
       },
     },
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
