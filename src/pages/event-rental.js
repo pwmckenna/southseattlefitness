@@ -4,7 +4,7 @@ import Image from '../components/images/studio'
 import Layout from '../components/layout'
 import React from 'react'
 import SEO from '../components/seo'
-import Schedule from '../components/event-calendar';
+import { EventCalendar } from '../components/mind-body-widgets';
 import TexturedSection from '../components/textured-section';
 import withRoot from '../utils/with-root';
 
@@ -62,7 +62,7 @@ const EventRentalPage = () => (
       maxWidth: 300,
       minHeight: 100
     }}>
-      <Schedule />
+      <EventCalendar />
     </div>
     <Footer />
   </Layout>

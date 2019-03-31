@@ -8,7 +8,7 @@ import TexturedSection from '../components/textured-section';
 import withRoot from '../utils/with-root';
 import { Paper } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
-import Calendar from '../components/yoga-calendar';
+import { YogaCalendar } from '../components/mind-body-widgets';
 
 const Information = withStyles(theme => ({
   root: {
@@ -27,7 +27,7 @@ const Information = withStyles(theme => ({
       <Grid container justify="center">
         <Grid item xs={12} md={12}>
           <Paper className={classes.paper}>
-            <Calendar />
+            <YogaCalendar />
           </Paper>
         </Grid>
       </Grid>

@@ -1,12 +1,10 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import { AppBar, Button, Toolbar, Typography } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import * as COLORS from '../utils/colors';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import cx from 'classnames';
 
 export default withStyles(theme => ({
   root: {

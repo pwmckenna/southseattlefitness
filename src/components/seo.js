@@ -71,8 +71,10 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [
+    'South Seattle Fitness',
+    'southseattlefitness',
     'Women\'s workout',
-    'Sout Seattle yoga',
+    'South Seattle yoga',
     'Fitness for women',
     'HIIT classes',
     'pre-natal',

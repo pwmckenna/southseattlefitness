@@ -1,4 +1,5 @@
-import { Link } from 'gatsby';
+import * as COLORS from '../utils/colors';
+import Clickable from '../components/clickable';
 import EventsImage from '../components/images/events';
 import Fit4MomImage from '../components/images/fit4mom';
 import Footer from '../components/footer';
@@ -11,10 +12,10 @@ import SEO from '../components/seo'
 import TexturedSection from '../components/textured-section';
 import YogaImage from '../components/images/yoga';
 import withRoot from '../utils/with-root';
+import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
-import { withStyles } from "@material-ui/core/styles";
-import * as COLORS from '../utils/colors';
 import { use as usePaperform, show as showPaperform } from '../utils/paperform';
+import { withStyles } from "@material-ui/core/styles";
 
 const Programs = withStyles(theme => ({
   root: {
@@ -156,20 +157,14 @@ const IndexPage = () => {
           }}>
             <h2>Welcome to South Seattle Fitness</h2>
             <p>South Seattle Fitness is your place to thrive through pre-natal, post-natal, and HIIT FIT4MOM classes, flowing yoga practices, wellness workshops, and community events.</p>
-            <a
-              href="#"
+            <Clickable
               onClick={e => {
                 e.preventDefault();
                 showPaperform();
               }}
-              style={{
-                fontWeight: 'bold',
-                color: 'inherit',
-                textDecoration: 'none'
-              }}
             >
               Your first class is free. Check us out today!
-            </a>
+            </Clickable>
           </Grid>
         </Grid>
       </TexturedSection>

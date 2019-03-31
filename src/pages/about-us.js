@@ -1,16 +1,16 @@
-import OwnersImage from '../components/images/owners';
+import * as COLORS from '../utils/colors';
+import Clickable from '../components/clickable';
 import Footer from '../components/footer';
 import Grid from '@material-ui/core/Grid';
 import Image from '../components/images/studio'
 import Layout from '../components/layout'
+import OwnersImage from '../components/images/owners';
 import React from 'react'
 import SEO from '../components/seo'
 import TexturedSection from '../components/textured-section';
 import withRoot from '../utils/with-root';
-import { Paper } from '@material-ui/core';
-import { withStyles } from "@material-ui/core/styles";
 import { use as usePaperform, show as showPaperform } from '../utils/paperform';
-import * as COLORS from '../utils/colors';
+import { withStyles } from "@material-ui/core/styles";
 
 const Photos = withStyles(theme => ({
   root: {
@@ -45,20 +45,17 @@ const Photos = withStyles(theme => ({
                       <p>Our mission is to “create a community space in South Seattle where people can come together in fitness and wellness in order to discover new possibilities for themselves and new connections with others.”</p>
                       <p>Our vision for our space is to “reflect the beauty, power, and diversity of our community by helping our members empower themselves to find greater strength and limitless possibility.”</p>
                       <p>At South Seattle Fitness, we host a variety of programs.  We hold yoga classes including Vinyasa Flow and Hatha Slow Flow, open to all levels and genders;  we host FIT4MOM South Seattle classes, nurturing strength in motherhood through pre, postnatal and HIIT classes, within a positive and empowering community of women and families; Counterpoint Massage has found a new home here in our building; and we rent out our beautiful indoor/outdoor space for private events.</p>
-                      <p>Come on down and join us for yoga and more! <a
-                      href="#"
+                      <p>Come on down and join us for yoga and more! <Clickable
                       onClick={e => {
                           e.preventDefault();
                           showPaperform();
                       }}
                       style={{
-                          fontWeight: 'bold',
-                          color: 'inherit',
-                          textDecoration: 'none'
+                          fontWeight: 'bold'
                       }}
                       >
                       Your first class is always free.
-                      </a> We can’t wait to meet you and welcome you into our space!</p>
+                      </Clickable> We can’t wait to meet you and welcome you into our space!</p>
                       <p>See you soon!</p>
                       <p>Rachel and Caitlin</p>
                   </Grid>
