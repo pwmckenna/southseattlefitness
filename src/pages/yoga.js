@@ -1,14 +1,14 @@
 import Footer from '../components/footer';
 import Grid from '@material-ui/core/Grid';
-import Image from '../components/images/studio'
+import Image from '../components/images/yoga-background';
 import Layout from '../components/layout'
 import React from 'react'
 import SEO from '../components/seo'
 import TexturedSection from '../components/textured-section';
 import withRoot from '../utils/with-root';
 import { Paper } from '@material-ui/core';
-import { withStyles } from "@material-ui/core/styles";
 import { YogaCalendar } from '../components/mind-body-widgets';
+import { withStyles } from "@material-ui/core/styles";
 
 const Information = withStyles(theme => ({
   root: {
@@ -41,7 +41,7 @@ const EventRentalPage = () => (
     <div style={{
       position: 'relative',
       overflow: 'hidden',
-      height: 250,
+      height: '30vh',
       display: 'grid',
       alignItems: 'center',
       justifyItems: 'center'

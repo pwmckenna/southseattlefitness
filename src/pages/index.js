@@ -1,16 +1,16 @@
 import * as COLORS from '../utils/colors';
 import Clickable from '../components/clickable';
-import EventsImage from '../components/images/events';
-import Fit4MomImage from '../components/images/fit4mom';
+import EventsPreview from '../components/images/events-preview';
+import Fit4MomPreview from '../components/images/fit4mom-preview';
 import Footer from '../components/footer';
 import Grid from '@material-ui/core/Grid';
-import Image from '../components/images/studio'
+import Image from '../components/images/yoga-background'
 import Layout from '../components/layout'
 import Paper from '@material-ui/core/Paper';
 import React from 'react'
 import SEO from '../components/seo'
 import TexturedSection from '../components/textured-section';
-import YogaImage from '../components/images/yoga';
+import YogaPreview from '../components/images/yoga-preview';
 import withRoot from '../utils/with-root';
 import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
@@ -73,7 +73,7 @@ const Programs = withStyles(theme => ({
         <Grid item xs={12} md={4}>
           <Paper className={classes.paper}>
             <OutboundLink href="https://southseattle.fit4mom.com/classes" className={classes.link}>
-              <Fit4MomImage className={classes.image} />
+              <Fit4MomPreview className={classes.image} />
               <div className={classes.text}>
                 <div className="before">
                   <h3>FIT4MOM</h3>
@@ -90,7 +90,7 @@ const Programs = withStyles(theme => ({
         <Grid item xs={12} md={4}>
           <Paper className={classes.paper}>
             <Link to="/yoga" className={classes.link}>
-              <YogaImage className={classes.image} />
+              <YogaPreview className={classes.image} />
               <div className={classes.text}>
                 <div className="before">
                   <h3>Yoga</h3>
@@ -106,7 +106,7 @@ const Programs = withStyles(theme => ({
         <Grid item xs={12} md={4}>
           <Paper className={classes.paper}>
             <Link to="/event-rental" className={classes.link}>
-              <EventsImage className={classes.image} />
+              <EventsPreview className={classes.image} />
               <div className={classes.text}>
                 <div className="before">
                   <h3>Event Rental</h3>
@@ -133,7 +133,7 @@ const IndexPage = () => {
       <div style={{
         position: 'relative',
         overflow: 'hidden',
-        height: 360,
+        height: '40vh',
         display: 'grid',
         alignItems: 'center',
         justifyItems: 'center'
