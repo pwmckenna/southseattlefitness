@@ -40,6 +40,12 @@ module.exports = {
         pixelId: '397844000782224',
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://southseattlefitness.com`,
+      },
+    },
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-sitemap'
     // this (optional) plugin enables Progressive Web App + Offline functionality
