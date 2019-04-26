@@ -26,7 +26,9 @@ const Image = props => (
         }
       }
     `}
-    render={data => <Img {...props} fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img {...props} fluid={data.placeholderImage.childImageSharp.fluid} />
+    )}
   />
 )
 export default Image

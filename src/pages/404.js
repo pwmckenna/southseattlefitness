@@ -2,8 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import withRoot from '../utils/with-root';
-
+import withRoot from '../utils/with-root'
 
 const NotFoundPage = () => (
   <Layout>
@@ -13,4 +12,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default withRoot(NotFoundPage);
+export default withRoot(NotFoundPage)

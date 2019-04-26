@@ -73,7 +73,7 @@ SEO.defaultProps = {
   keywords: [
     'south seattle fitness',
     'south seattle fitness beacon hill',
-    'south seattle fitness center'
+    'south seattle fitness center',
     'southseattlefitness',
     'women\'s workout',
     'south seattle yoga',

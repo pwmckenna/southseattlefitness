@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-import { ThemeProvider } from "@material-ui/styles";
-import { createMuiTheme } from "@material-ui/core/styles";
-import * as COLORS from '../utils/colors';
+import { ThemeProvider } from '@material-ui/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
+import * as COLORS from '../utils/colors'
 import Header from './header'
 
 import './layout.css'
 
-const theme = createMuiTheme();
+const theme = createMuiTheme()
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,14 +28,14 @@ const Layout = ({ children }) => (
           style={{
             backgroundColor: 'white',
             zIndex: 1,
-            borderBottom: `2px solid ${COLORS.GREY}`
+            borderBottom: `2px solid ${COLORS.GREY}`,
           }}
         />
 
         <div
           style={{
             margin: `0 auto`,
-            maxWidth: `100%`
+            maxWidth: `100%`,
           }}
         >
           {children}
